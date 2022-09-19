@@ -1,5 +1,7 @@
 from sklearn.pipeline import FeatureUnion, Pipeline
 
+from ml_pipeline.pipeline_with_lexicon import naive_bayes_counts_lex
+
 from ml_pipeline.cnn import CNN
 from tasks import vua_format as vf
 from ml_pipeline import utils
@@ -77,7 +79,7 @@ def test_combined_features():
 
 def test_full_pipelines():
     train_X, train_y, test_X, test_y = train_test_data()
-    pipes = [pipelines.naive_bayes_counts, pipelines.svm_libsvc_embed(), pipelines.naive_bayes_counts_lex()]
+    pipes = [pipelines.naive_bayes_counts, pipelines.svm_libsvc_embed(), naive_bayes_counts_lex()]
 
     for pipe in pipes:
         pipe = pipelines.naive_bayes_counts()

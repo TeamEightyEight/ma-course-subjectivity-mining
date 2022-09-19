@@ -17,8 +17,8 @@ class Text2Embedding(TransformerMixin):
         print('transforming data using customized transformer')
         model = None
         if self.embed_source == 'glove':
-            path = 'data/glove.twitter.27B.100d.txt'
-            w2vfile = 'data/glove.twitter.27B.100d.vec'
+            path = 'data/glove.twitter.27B.25d.txt'
+            w2vfile = 'data/glove.twitter.27B.25d.vec'
             if not Path(w2vfile).is_file():
                 glove2word2vec(path, w2vfile)
             model = KeyedVectors.load_word2vec_format(w2vfile, binary=False)
