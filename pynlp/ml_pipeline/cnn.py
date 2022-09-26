@@ -26,6 +26,9 @@ hidden_dims = 250
 epochs = 6
 
 
+
+
+
 class CNN:
 
     def __init__(self, preprocessor=None):
